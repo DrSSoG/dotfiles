@@ -1,0 +1,36 @@
+#! /bin/sh
+
+sxhkd &
+dunst -config /home/socrates/.config/dunst/dusntrc &
+/home/socrates/.config/polybar/launch.sh &
+nitrogen --restore &
+synclient TapButton1=1 &
+xautolock -time 20 -locker 'i3lock -d -i /home/socrates/Downloads/Wallpapers/wood-dribbble.png -t' &
+
+bspc monitor -d I II III IV V #VI VII VIII IX X
+
+# colors
+focused=#f92672
+unfocused=#CCC
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config normal_border_color $unfocused
+bspc config active_border_color $unfocused
+bspc config focused_border_color $focused
+bspc config focus_follows_pointer true
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a firefox desktop='^2' state=monocle
+bspc rule -a cmus desktop='^10'
+bspc rule -a zathura state=tiled
+bspc rule -a mupdf state=tiled
+
