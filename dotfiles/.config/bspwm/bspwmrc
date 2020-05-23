@@ -2,6 +2,7 @@
 
 sxhkd &
 dunst -config /home/socrates/.config/dunst/dusntrc &
+picom &
 /home/socrates/.config/polybar/launch.sh &
 nitrogen --restore &
 synclient TapButton1=1 &
@@ -10,7 +11,7 @@ xautolock -time 20 -locker 'i3lock -d -i /home/socrates/Downloads/Wallpapers/woo
 bspc monitor -d I II III IV V #VI VII VIII IX X
 
 # colors
-focused=#f92672
+focused=#98971a
 unfocused=#CCC
 
 bspc config border_width         2
